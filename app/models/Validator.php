@@ -43,7 +43,9 @@ class Validator {
                     }
                 } else {
                     if ($this->$callback($value, $key) == FALSE)
-                        $valid = FALSE;
+                        #in the previous line we just want to call the function not checking its return value
+                        #because its return value will not be FALSE what ever happens
+                        $valid = FALSE; #unneeded line
                 }
             }
         }
